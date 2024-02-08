@@ -34,9 +34,17 @@
         <input type="submit" value="total"> -->
 
     </form>
+    <form action="index.php" method="post">
+        <label for="">radius:</label>
+        <input type="text" name="radius">
+        <input type="submit" value="calculate">
+    </form>
 </body>
 
 </html>
+
+
+
 <?php
 //username password
 //    echo "{$_POST["username"]} <br>";
@@ -51,11 +59,11 @@
 // $total=$quantity*$price;
 
 // echo"You have ordered {$quantity} x {$item}/s";
-// echo"Your total is: \${$total}";
-$x = $_POST["x"];
-$y = $_POST["y"];
-$z = $_POST["z"];
-$total = null;
+// // echo"Your total is: \${$total}";
+// $x = $_POST["x"];
+// $y = $_POST["y"];
+// $z = $_POST["z"];
+// $total = null;
 
 // $total = abs($x);
 // $total = round($x);
@@ -70,5 +78,22 @@ $total = null;
 
 // echo "$total ";
 
+$radius=$_POST["radius"];
+$circumference = null;
+$area=null;
+$volume =null;
+
+$circumference=2*pi()*$radius;
+$circumference=round($circumference,2);
+
+$area=pi()*pow($radius,2);
+$area=round($area,2);
+
+$volume=4/3 *pi()*pow($radius,2);
+$volume=round($volume,2);
+
+echo"Circumference ={$circumference}cm <br>";
+echo"Area={$area}cm^2 <br>";
+echo"volume={$volume}cm^3 <br>"
 
 ?>
